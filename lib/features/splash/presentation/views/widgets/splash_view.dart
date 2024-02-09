@@ -1,9 +1,13 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utlis/assets.dart';
+import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SplashViewBody extends StatefulWidget {
-  const SplashViewBody({super.key});
+  const SplashViewBody(
+      {super.key}); //we must make the constructor constant to improve app performance
   @override
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
@@ -11,30 +15,24 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
   //this must be used with animation to handle the rate of change of values
-//we must make this constructor constant to improve app performance
 
   late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    initSlidingAnimation();
 
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
-            .animate(animationController);
-
-    animationController.forward();
+    navigateToHome();
   }
+
+
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
-    animationController.dispose();//to turn off controller
+    animationController.dispose(); //to turn off controller
   }
 
   @override
@@ -50,5 +48,23 @@ class _SplashViewBodyState extends State<SplashViewBody>
         SlidingText(slidingAnimation: slidingAnimation),
       ],
     );
+  }
+
+  void initSlidingAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
+            .animate(animationController);
+
+    animationController.forward();
+  }
+
+
+    void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(() =>const HomeView(), transition: Transition.fadeIn,duration: kTranstionDuration);
+    });
   }
 }
