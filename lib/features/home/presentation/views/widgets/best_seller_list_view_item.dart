@@ -4,6 +4,7 @@ import 'package:bookly_app/core/utlis/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
+
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
 
@@ -35,7 +36,8 @@ class BestSellerListViewItem extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * .5,
                   child: Text(
                     'Harry Potter and the Golbet of Fire',
-                    style: Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
+                    style:
+                        Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                   ),
@@ -58,7 +60,7 @@ class BestSellerListViewItem extends StatelessWidget {
                       style: Styles.textStyle20
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
-                  const  BookRating(),
+                    const BookRating(),
                   ],
                 ),
               ],
@@ -69,3 +71,5 @@ class BestSellerListViewItem extends StatelessWidget {
     );
   }
 }
+
+
