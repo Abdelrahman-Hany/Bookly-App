@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListView extends StatelessWidget {
@@ -7,7 +7,7 @@ class BestSellerListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      physics: const NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         padding: EdgeInsets.zero, //to remove ListView padding
         scrollDirection: Axis.vertical,
@@ -15,7 +15,7 @@ class BestSellerListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.symmetric(vertical: 10),
-            child: BestSellerListViewItem(),
+            child: BookListViewItem(),
           );
         });
   }
