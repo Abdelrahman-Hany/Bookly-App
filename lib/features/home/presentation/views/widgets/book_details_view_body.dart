@@ -1,18 +1,55 @@
-import 'package:bookly_app/core/utlis/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_details_custom_app_bar.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/books_action.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/books_details_section.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_section.dart';
 import 'package:flutter/material.dart';
-import 'book_rating.dart';
-import 'similar_book_list_view.dart';
+
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
 
+    return const CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              children: [
+                BookDetailsCustomAppBar(),
+                BookDetailsSection(),
+                Expanded(
+                    child: SizedBox(
+                  height: 50,
+                ),),
+                SimilarBooksSection(),
+                SizedBox(
+                  height: 30,
+                ),
+              ],
+              
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+
+
+
+//this is the upove code put before formatting it to smaller widgets
+/*
+class BookDetailsViewBody extends StatelessWidget {
+  const BookDetailsViewBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
@@ -22,6 +59,7 @@ class BookDetailsViewBody extends StatelessWidget {
             child: Column(
               children: [
                 const BookDetailsCustomAppBar(),
+                
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * .25),
                   child: const CustomBookImage(),
@@ -55,7 +93,8 @@ class BookDetailsViewBody extends StatelessWidget {
                 const SizedBox(
                   height: 37,
                 ),
-                const BooksAction(),
+                const BooksAction(),  
+                
                 const Expanded(
                     child: SizedBox(
                   height: 50,
@@ -76,6 +115,7 @@ class BookDetailsViewBody extends StatelessWidget {
                   height: 30,
                 ),
               ],
+              
             ),
           ),
         ),
@@ -83,9 +123,12 @@ class BookDetailsViewBody extends StatelessWidget {
     );
   }
 }
-   
-   /*
-    Padding(
+*/
+
+
+//we replaced this code with upove code to make the UI more responsive to smaller devices
+  /*
+  return  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         children: [
