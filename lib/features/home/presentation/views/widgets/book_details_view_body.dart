@@ -3,33 +3,31 @@ import 'package:bookly_app/features/home/presentation/views/widgets/books_detail
 import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_section.dart';
 import 'package:flutter/material.dart';
 
-
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return const CustomScrollView(
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
           child: Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 30),
+            padding: EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               children: [
                 BookDetailsCustomAppBar(),
                 BookDetailsSection(),
                 Expanded(
-                    child: SizedBox(
-                  height: 50,
-                ),),
+                  child: SizedBox(
+                    height: 50,
+                  ),
+                ),
                 SimilarBooksSection(),
                 SizedBox(
                   height: 30,
                 ),
               ],
-              
             ),
           ),
         ),
@@ -37,10 +35,6 @@ class BookDetailsViewBody extends StatelessWidget {
     );
   }
 }
-
-
-
-
 
 //this is the upove code put before formatting it to smaller widgets
 /*
@@ -125,9 +119,8 @@ class BookDetailsViewBody extends StatelessWidget {
 }
 */
 
-
 //we replaced this code with upove code to make the UI more responsive to smaller devices
-  /*
+/*
   return  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(

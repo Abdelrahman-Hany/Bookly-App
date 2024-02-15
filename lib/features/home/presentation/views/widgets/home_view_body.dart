@@ -36,7 +36,8 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        SliverToBoxAdapter(//this work as expanded widget
+        SliverToBoxAdapter(
+          //this work as expanded widget
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
             child: BestSellerListView(),
@@ -67,4 +68,3 @@ class HomeViewBody extends StatelessWidget {
     //   );
   }
 }
-
