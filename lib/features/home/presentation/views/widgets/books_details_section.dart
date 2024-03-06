@@ -14,7 +14,7 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .25),
-          child: const CustomBookImage(),
+          child: const CustomBookImage(imageUrl: 'https://unsplash.com/photos/a-computer-screen-with-a-remote-control-on-it-s5kTY-Ve1c0'),
         ),
         const SizedBox(
           height: 43,
