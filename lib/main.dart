@@ -1,5 +1,4 @@
 import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/core/utlis/api_service.dart';
 import 'package:bookly_app/core/utlis/app_router.dart';
 import 'package:bookly_app/core/utlis/service_locator.dart';
 import 'package:bookly_app/features/home/data/repos/home_repo_impl.dart';
