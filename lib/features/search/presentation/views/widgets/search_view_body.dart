@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utlis/styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_list_view_item.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/custom_search_text_field.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,8 @@ class SearchResultListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.symmetric(vertical: 10),
-            child: BookListViewItem(),
+            // child: BookListViewItem(bookModel: booksModel[index],),
+            child: Text('....'),
           );
         });
   }
