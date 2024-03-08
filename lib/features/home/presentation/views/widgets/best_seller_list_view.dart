@@ -29,7 +29,7 @@ class BestSellerListView extends StatelessWidget {
         } else if (state is NewestBooksFailuer) {
           return CustomErrorWidget(errMessage: state.errMessage);
         } else {
-          return const CustomLoadingIndicator();
+          return const Center(child:CustomLoadingIndicator());
         }
       },
     );
