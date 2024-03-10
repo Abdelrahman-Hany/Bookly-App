@@ -13,9 +13,9 @@ class CustomBookImage extends StatelessWidget {
         aspectRatio: 2 / 3,
         child: CachedNetworkImage(
           fit:BoxFit.fill,
-          errorWidget: (context,url,error)=>const Icon(Icons.error),
           imageUrl: imageUrl,
           placeholder:(context, url) =>const Center(child: CircularProgressIndicator()),
+          errorWidget: (context,url,error)=>const Icon(Icons.error),
           ),
       ),
     );

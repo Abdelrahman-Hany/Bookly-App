@@ -14,7 +14,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
           endPoint:
-              'volumes?q=subject:Programming&Filtering=free-ebooks&Sorting=newest');
+              'volumes?q=subject:computer science&Filtering=free-ebooks&Sorting=newest');
 
       List<BookModel> books = [];
 
@@ -44,7 +44,7 @@ class HomeRepoImpl implements HomeRepo {
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));
       }
-      return left(ServerFailure(errorMessage: e.toString()));
+      return  left(ServerFailure(errorMessage: e.toString()));
     }
   }
 }
